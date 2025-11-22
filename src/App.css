@@ -1,42 +1,171 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ===========================
+   GLOBAL
+=========================== */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0A2463; /* Fundo suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===========================
+   CARD PRINCIPAL
+=========================== */
+.app-container {
+  background-color: #ffffff;
+  width: 480px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.07);
   text-align: center;
+  border: 1px solid rgba(0,0,0,0.03);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  font-size: 26px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #1976d2;
+  font-weight: 600;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ===========================
+   INPUT + BOTÃO
+=========================== */
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #dce3ee;
+  width: 65%;
+  outline: none;
+  font-size: 14px;
+  color: black;
+  background-color: #fafcff;
+  transition: 0.2s;
 }
 
-.card {
-  padding: 2em;
+input:hover,
+input:focus {
+  border-color: #1976d2;
+  background-color: #ffffff;
 }
 
-.read-the-docs {
-  color: #888;
+button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: #605F5E;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.25s ease-in-out;
+}
+
+button:hover {
+  background-color: #0d57aa;
+}
+
+/* ===========================
+   FILTROS
+=========================== */
+.label-filtros {
+  font-weight: bold;
+  color: #1976d2;
+  text-align: start;
+  margin: 1em 0 0 0;
+}
+
+.btns-filtros {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filter-buttons {
+  margin-top: 20px;
+}
+
+.filter-buttons button {
+  background-color: #f6ffe7;
+  color: #1976d2;
+  font-weight: 500;
+  border: 1px solid #cdddf6;
+}
+
+.filter-buttons button:hover {
+  background-color: #d4e4ff;
+}
+
+.botao-add {
+  background-color: #1976d2;
+}
+
+/* ===========================
+   LISTA DE TAREFAS
+=========================== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  text-align: left;
+}
+
+li {
+  background: #ffffff;
+  border: 1px solid #dde5f1;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+li:hover {
+  border-color: #b9cff4;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #80a6d8;
+}
+
+/* Checkbox moderno */
+input[type="checkbox"] {
+  accent-color: #1976d2;
+  background-color: #ffffff;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.tarefa {
+  display: flex;
+  align-items: start;
+}
+
+.tarefa-texto {
+  color: black;
+}
+
+.tarefa-concluida {
+  text-decoration: line-through;
+  color: black;
 }

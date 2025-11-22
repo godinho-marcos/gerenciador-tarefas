@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { TarefasProvider, TarefasContext } from "./context/TarefasContext";
 import ListaDeTarefas from "./components/ListaDeTarefas";
+import "./App.css";
 
 function AppInterno() {
   const [texto, setTexto] = useState("");
@@ -14,21 +15,30 @@ function AppInterno() {
   }
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
-      <h1>Gerenciador de Tarefas</h1>
+    <div className="app-container">
+      <h1 className="titulo">Gerenciador de Tarefas</h1>
 
-      <input
-        type="text"
-        placeholder="Digite uma tarefa..."
-        value={texto}
-        onChange={e => setTexto(e.target.value)}
-      />
-      <button onClick={adicionarTarefa}>Adicionar</button>
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Digite uma tarefa..."
+          className="input-material"
+          value={texto}
+          onChange={e => setTexto(e.target.value)}
+        />
+        <button className="botao-add" onClick={adicionarTarefa}>
+          Adicionar
+        </button>
+      </div>
 
-      <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
-        <button onClick={() => dispatch({ type: "FILTRO", filtro: "todas" })}>Todas</button>
-        <button onClick={() => dispatch({ type: "FILTRO", filtro: "concluidas" })}>Concluídas</button>
-        <button onClick={() => dispatch({ type: "FILTRO", filtro: "pendentes" })}>Pendentes</button>
+      <hr></hr>
+
+      <h3 className="label-filtros">Filtros:</h3>
+
+      <div className="btns-filtros">
+        <button className="filter-buttons" onClick={() => dispatch({ type: "FILTRO", filtro: "todas" })}>Todas</button>
+        <button className="filter-buttons" onClick={() => dispatch({ type: "FILTRO", filtro: "concluidas" })}>Concluídas</button>
+        <button className="filter-buttons" onClick={() => dispatch({ type: "FILTRO", filtro: "pendentes" })}>Pendentes</button>
       </div>
 
       <ListaDeTarefas />
